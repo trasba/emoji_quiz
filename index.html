@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Emoji Movie Guessing Game</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-  <div class="container">
-    <div class="card" onclick="revealMovie()">
-      <div class="emojis" id="emojiDisplay"></div>
-      <div class="movie-title" id="movieTitle"></div> 
+  <head>
+    <title>Emoji Movie Guessing Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Guess the Movie!</h1>
+      <div class="card">
+        <div class="click-area left" onclick="revealMovie('backward')"></div>
+        <div class="click-area right" onclick="revealMovie('forward')"></div>
+        <div class="emojis" id="emojiDisplay"></div>
+        <div class="movie-title" id="movieTitle"></div>
+      </div>
     </div>
-  </div>
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

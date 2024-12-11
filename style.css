@@ -9,6 +9,13 @@ body {
 
 .container {
   width: 300px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .card {
@@ -19,6 +26,7 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.2s;
+  position: relative;
 }
 
 .card:hover {
@@ -26,12 +34,38 @@ body {
 }
 
 .emojis {
-  font-size: 3em; 
+  font-size: 3em;
   margin-bottom: 10px;
 }
 
 .movie-title {
   font-size: 1.2em;
   font-weight: bold;
-  visibility: hidden; /* Initially hide the title */
+  visibility: hidden;
+}
+
+.click-area {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.click-area:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.left {
+  left: 0;
+}
+
+.right {
+  right: 0;
 }
