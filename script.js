@@ -4,28 +4,28 @@ const emojis = [
   "🧊🚢", // Titanic
   "🐠🐟🦈", // Finding Nemo
   "🤖🤠🚀", // Toy Story
-  "🌎🐒", // Planet of the Apes
+  "🌎🐒🦧🦍", // Planet of the Apes
   "🥊💪", // Rocky
-  "🕺👿", // The Evil Dead
+  "💃🏼🕺🏼👺👹", // The Evil Dead
   "👮‍♂️🚓📚", // Police Academy
   "🐍✈️", // Snakes on a Plane
-  "🍽️🐷", // La Grande Bouffe
-  "👿👠", // The Devil Wears Prada
+  "🍽️🍔🍕🥞🍰", // La Grande Bouffe
+  "👿👠👗", // The Devil Wears Prada
   "🚌💨", // Speed
-  "✉️🚪 x 2", // The Postman Always Rings Twice
+  "✉️🚪🛎️🛎️", // The Postman Always Rings Twice
   "🥧🇺🇸", // American Pie
   "🎈🤡🎈", // IT
   "🦸‍♀️💫", // Wonder Woman
   "🐱‍👤👩", // Catwoman
-  "👻🏠", // Paranormal Activity
+  "👩🏼👱🏼‍♂️📹👻", // Paranormal Activity
   "🤵🔫🍸", // James Bond
-  "🚗⚡️🕰️", // Back to the Future
+  "🕰️◀️⚡️🚗", // Back to the Future
   "🏃‍♂️🪶🍫", // Forrest Gump
-  "🐺📈💰", // The Wolf of Wall Street
+  "🐺📈💰👯", // The Wolf of Wall Street
   "🚀👩‍🚀🌎", // Gravity
-  "🔪🚿", // Psycho
-  "🪓🏨 twins", // The Shining
-  "좀비🧠", // Braindead
+  "🔪🙎🏻‍♀️🚿", // Psycho
+  "🏨🤪🪓🩸🩸", // The Shining
+  "🧠💀", // Braindead
 ];
 
 const movies = [
