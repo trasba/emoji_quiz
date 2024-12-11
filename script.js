@@ -1,4 +1,5 @@
 const emojis = [
+  "🎬",
   "🍕🐀", // Ratatouille
   "🦁🐗🐒", // The Lion King
   "🧊🚢", // Titanic
@@ -26,9 +27,11 @@ const emojis = [
   "🔪🙎🏻‍♀️🚿", // Psycho
   "🏨🤪🪓🩸🩸", // The Shining
   "🧠💀", // Braindead
+  "🏁",
 ];
 
 const movies = [
+  "START",
   "Ratatouille",
   "The Lion King",
   "Titanic",
@@ -56,48 +59,35 @@ const movies = [
   "Psycho",
   "The Shining",
   "Braindead",
+  "THE END",
 ];
 
 let currentEmojiIndex = 0;
-let isStarted = false;
+let showTitle = false;
 
 function revealMovie(direction) {
   const emojiDisplay = document.getElementById("emojiDisplay");
   const movieTitle = document.getElementById("movieTitle");
 
-  if (!isStarted) {
-    isStarted = true;
-    emojiDisplay.textContent = emojis[currentEmojiIndex];
-    return;
-  }
-
   if (direction === "forward") {
-    if (movieTitle.style.visibility === "hidden") {
+    if (showTitle && movies[currentEmojiIndex] !== "") {
       movieTitle.textContent = movies[currentEmojiIndex];
       movieTitle.style.visibility = "visible";
     } else {
+      movieTitle.style.visibility = "hidden";
       currentEmojiIndex = (currentEmojiIndex + 1) % emojis.length;
-      if (currentEmojiIndex === 0) {
-        emojiDisplay.textContent = "The End";
-        movieTitle.style.visibility = "hidden";
-        isStarted = false;
-        return;
-      }
       emojiDisplay.textContent = emojis[currentEmojiIndex];
-      movieTitle.style.visibility = "hidden";
     }
+
+    showTitle = !showTitle;
   } else if (direction === "backward") {
-    if (currentEmojiIndex === 0) {
-      emojiDisplay.textContent = "Start";
-      movieTitle.style.visibility = "hidden";
-      isStarted = false;
-      return;
-    }
     currentEmojiIndex = (currentEmojiIndex - 1 + emojis.length) % emojis.length;
     emojiDisplay.textContent = emojis[currentEmojiIndex];
     movieTitle.style.visibility = "hidden";
+
+    showTitle = !showTitle;
   }
 }
 
 // Initial display
-emojiDisplay.textContent = "Start";
+document.getElementById("emojiDisplay").textContent = emojis[currentEmojiIndex];
