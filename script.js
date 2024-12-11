@@ -63,14 +63,16 @@ const movies = [
 ];
 
 let currentEmojiIndex = 0;
-let showTitle = false;
 
 function revealMovie(direction) {
   const emojiDisplay = document.getElementById("emojiDisplay");
   const movieTitle = document.getElementById("movieTitle");
 
   if (direction === "forward") {
-    if (showTitle && movies[currentEmojiIndex] !== "") {
+    if (
+      movieTitle.style.visibility == "hidden" &&
+      movies[currentEmojiIndex] !== ""
+    ) {
       movieTitle.textContent = movies[currentEmojiIndex];
       movieTitle.style.visibility = "visible";
     } else {
@@ -78,16 +80,41 @@ function revealMovie(direction) {
       currentEmojiIndex = (currentEmojiIndex + 1) % emojis.length;
       emojiDisplay.textContent = emojis[currentEmojiIndex];
     }
-
-    showTitle = !showTitle;
   } else if (direction === "backward") {
     currentEmojiIndex = (currentEmojiIndex - 1 + emojis.length) % emojis.length;
     emojiDisplay.textContent = emojis[currentEmojiIndex];
     movieTitle.style.visibility = "hidden";
-
-    showTitle = !showTitle;
   }
 }
 
+// Event listener for clicks on the card
+const card = document.querySelector(".card");
+card.addEventListener("click", (event) => {
+  if (event.shiftKey) {
+    revealMovie("backward");
+  } else {
+    revealMovie("forward");
+  }
+});
+
 // Initial display
-document.getElementById("emojiDisplay").textContent = emojis[currentEmojiIndex];
+const emojiDisplay = document.getElementById("emojiDisplay");
+const movieTitle = document.getElementById("movieTitle");
+emojiDisplay.textContent = emojis[currentEmojiIndex];
+movieTitle.style.visibility = "hidden";
+
+function toggleExplanation() {
+  const explanation = document.getElementById("explanation");
+  explanation.style.display =
+    explanation.style.display === "none" ? "block" : "none";
+}
+
+// Add an event listener to close the explanation when clicking outside
+document.addEventListener("click", (event) => {
+  const explanation = document.getElementById("explanation");
+  const infoIcon = document.querySelector(".info-icon");
+
+  if (!explanation.contains(event.target) && !infoIcon.contains(event.target)) {
+    explanation.style.display = "none";
+  }
+});

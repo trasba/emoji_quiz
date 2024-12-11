@@ -1,19 +1,33 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Emoji Movie Guessing Game</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <div class="container">
-      <h1>Guess the Movie!</h1>
-      <div class="card">
-        <div class="click-area left" onclick="revealMovie('backward')"></div>
-        <div class="click-area right" onclick="revealMovie('forward')"></div>
-        <div class="emojis" id="emojiDisplay"></div>
-        <div class="movie-title" id="movieTitle"></div>
+<body>
+  <div class="container">
+    <h1>
+      Guess the Movie!
+      <div class="info-icon-wrapper">
+        <div class="info-icon" onclick="toggleExplanation()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 0 24 24"
+            width="24px"
+            fill="#e8eaed"
+          >
+            <path d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+            />
+          </svg>
+        </div>
       </div>
+    </h1>
+    <div class="explanation" id="explanation">
+      <p>Click to show the movie title.</p>
+      <p>Click to go to the next movie.</p>
+      <p>Shift+click to go back.</p>
     </div>
-    <script src="script.js"></script>
-  </body>
-</html>
+    <div class="card">
+      <div class="emojis" id="emojiDisplay"></div>
+      <div class="movie-title" id="movieTitle"></div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
