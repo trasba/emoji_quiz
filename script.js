@@ -21,7 +21,7 @@ const emojis = [
   "👩🏼👱🏼‍♂️📹👻", // Paranormal Activity
   "🤵🔫🍸", // James Bond
   "🕰️◀️⚡️🚗", // Back to the Future
-  "🏃‍♂️🪶🍫", // Forrest Gump
+  "🏃‍♂️🍤🍫", // Forrest Gump
   "🐺📈💰👯", // The Wolf of Wall Street
   "🚀👩‍🚀🌎", // Gravity
   "🔪🙎🏻‍♀️🚿", // Psycho
